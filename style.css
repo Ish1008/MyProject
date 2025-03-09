@@ -1,71 +1,90 @@
-body{
+body {
     background: linear-gradient(180deg, #d3d3d3, pink);
 }
-*{  
+
+* {  
     text-decoration: none;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.navbar{
-    background:  pink; 
+
+.navbar {
+    background: pink; 
     font-family: sans-serif; 
-    padding: auto;
     height: 50px;
-    margin: auto;
-    
+    width: 100%;
 }
-.navdiv{
+
+.navdiv {
     display: flex;
     align-items: center; 
     justify-content: space-between;
+    padding: 0 20px;
 }
-.logo a{
+
+.logo a {
     font-size: 40px; 
     font-weight: 600; 
     color: white;
 }
-li{
+
+ul {
+    padding: 0;
+}
+
+li {
     list-style: none; 
     display: inline-block;
 }
-li a{
-    color:white; 
+
+li a {
+    color: white; 
     font-size: 18px; 
     font-weight: bold; 
     margin-right: 25px;
 }
-li a:hover{
+
+li a:hover {
     background-color: white;
 }
-button{
-see    background-color:  pink  ; 
+
+button {
+    background-color: pink; 
     margin-left: 15px; 
     border-radius: 10px; 
     padding: 10px; 
     width: 100px;
+    border: none;
+    cursor: pointer;
 }
-button a{   
+
+button a {   
     color: white; 
     font-weight: bold; 
     font-size: 15px;
 }
-button a:hover{
+
+button a:hover {
     background-color: white;
 }
-.content{
+
+.content {
     color: white;
     text-align: center;
     margin: 225px;
     padding-right: 600px;
     padding-left: 10px;    
     font-size: 20px;
-   font-family: sans-serif;
+    font-family: sans-serif;
 }
-p,h1 {
+
+p, h1 {
     color: black;    
 }
+
 /* ------------------- Mobile View ------------------- */
 @media (max-width: 768px) {
-    
     .navbar {
         height: auto;
         flex-direction: column;
@@ -77,7 +96,6 @@ p,h1 {
         text-align: center;
     }
 
-    
     .menu-toggle {
         display: block;
         font-size: 28px;
@@ -90,6 +108,7 @@ p,h1 {
         top: 15px;
         z-index: 1001;
     }    
+
     .nav-links {
         display: none;
         flex-direction: column;
@@ -102,7 +121,6 @@ p,h1 {
         padding: 10px 0;
     }
 
-    
     .nav-links.active {
         display: flex;
     }
@@ -112,7 +130,6 @@ p,h1 {
         text-align: center;
     }
 
-   
     .content {
         margin: 50px auto;
         padding: 10px;
@@ -127,7 +144,7 @@ p,h1 {
     }
 }
 
-/* -------------------(Phones) ------------------- */
+/* ------------------- Phones ------------------- */
 @media (max-width: 480px) {
     .logo a {
         font-size: 24px;
@@ -155,9 +172,15 @@ p,h1 {
     }
 }
 
-
+/* ------------------- Hide Burger Icon on Desktop ------------------- */
 @media (min-width: 769px) {
     .menu-toggle {
-        display: none;
+        display: none !important;
+    }
+
+    .nav-links {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
     }
 }
